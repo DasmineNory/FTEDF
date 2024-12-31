@@ -4,7 +4,7 @@ body {
     font-family: 'Courier New', monospace;
     background: url('/photo_2024-12-31_02-03-28.jpg') no-repeat center center fixed;
     background-size: cover; /* Ensures the image covers the entire background */
-    color: black;
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -206,4 +206,104 @@ body {
 .nft-box {
     font-size: 14px;
     font-weight: bold;
+}
+
+/* Base Styling for Mobile Responsiveness */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        align-items: flex-start;
+        overflow-x: hidden;
+    }
+
+    .pixelated-header {
+        margin-right: 0; /* Center header for smaller screens */
+        text-align: center;
+        width: 100%;
+        font-size: 16px; /* Reduce font size */
+    }
+
+    .ascii-art {
+        font-size: 20px; /* Scale down ASCII art */
+        letter-spacing: 1px;
+    }
+
+    .container {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .terminal {
+        width: 90%; /* Full width for mobile screens */
+        height: auto; /* Allow height to adjust based on content */
+        margin-bottom: 20px;
+    }
+
+    .header {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .content {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .center-object {
+        width: 100px;
+        height: 100px; /* Scale down for mobile */
+    }
+
+    .icon-container {
+        gap: 10px; /* Reduce spacing between icons */
+        bottom: 20px; /* Adjust position for smaller screens */
+        flex-wrap: wrap; /* Wrap icons if necessary */
+    }
+
+    .icon-box {
+        width: 50px;
+        height: 50px;
+        font-size: 10px;
+        border-radius: 8px;
+    }
+
+    .icon-box img {
+        width: 20px;
+        height: 20px; /* Adjust icon size */
+    }
+
+    .copy-box span {
+        font-size: 10px; /* Smaller text for mobile */
+    }
+
+    .nft-box {
+        font-size: 12px; /* Reduce font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .ascii-art {
+        font-size: 16px; /* Further scaling for very small screens */
+    }
+
+    .icon-box {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icon-box img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .center-object {
+        width: 80px;
+        height: 80px;
+    }
+
+    .content {
+        font-size: 10px; /* Compact font for very small screens */
+    }
 }
