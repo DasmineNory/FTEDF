@@ -56,18 +56,6 @@ body {
         
 }*/
 
-/* ASCII Art (XEREBRO) Styling */
-.ascii-art {
-    font-family: 'Courier New', monospace; /* Monospace font ensures alignment */
-    font-size: 1.2rem; /* Use rem units for dynamic scaling */
-    line-height: 1.2;
-    white-space: pre; /* Keeps the ASCII art formatting intact */
-    letter-spacing: 1px;
-    max-width: 300px; /* Match the terminal width */
-    text-align: center;
-    margin-bottom: 20px; /* Add spacing below ASCII art */
-}
-
 /*
 .ascii-art {
     font-family: 'Courier New', Courier, monospace; /* Monospace font ensures alignment 
@@ -102,7 +90,7 @@ body {
     align-items: center;
 }
 
-/* Terminal Styling */
+/* Terminals */
 .terminal {
     width: 300px;
     height: 500px;
@@ -187,17 +175,16 @@ body {
 }
 */
 
-/* Icon Container Styling */
+/* Floating Icons Styling */
 .icon-container {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Equal spacing between icons */
+    gap: 20px;
     position: absolute;
-    bottom: 20px;
+    bottom: 50px;
     z-index: 10;
 }
 
-/* Individual Icons */
 .icon-box {
     display: flex;
     justify-content: center;
@@ -209,7 +196,7 @@ body {
     border-radius: 10px;
     position: relative;
     font-family: 'Courier New', monospace;
-    font-size: 0.8rem; /* Match the scaling of other elements */
+    font-size: 12px;
     text-align: center;
     color: white;
     text-transform: uppercase;
@@ -257,6 +244,7 @@ body {
     body {
         flex-direction: column;
         align-items: center;
+        overflow-x: hidden;
     }
 
     .pixelated-header {
@@ -267,8 +255,8 @@ body {
     }
 
     .ascii-art {
-        font-size: 1rem; /* Scale down ASCII art */
-        max-width: 90%; /* Ensure it fits on small screens */
+        font-size: 20px; /* Scale down ASCII art */
+        letter-spacing: 1px;
     }
 
     .container {
@@ -279,8 +267,8 @@ body {
     }
 
     .terminal {
-        width: 90%; /* Full width for smaller screens */
-        height: auto; /* Allow dynamic height */
+        width: 90%; /* Full width for mobile screens */
+        height: auto; /* Allow height to adjust based on content */
         margin-bottom: 20px;
     }
 
@@ -300,13 +288,16 @@ body {
     }
 
     .icon-container {
-        gap: 10px; /* Reduce spacing for small screens */
+        gap: 10px; /* Reduce spacing between icons */
+        bottom: 20px; /* Adjust position for smaller screens */
+        flex-wrap: wrap; /* Wrap icons if necessary */
     }
 
     .icon-box {
         width: 50px;
         height: 50px;
-        font-size: 0.7rem; /* Adjust font size for smaller icons */
+        font-size: 10px;
+        border-radius: 8px;
     }
 
     .icon-box img {
@@ -325,19 +316,14 @@ body {
 
 @media (max-width: 480px) {
     .ascii-art {
-        font-size: 0.8rem; /* Further scaling for very small screens */
-    }
-
-    .terminal {
-        height: auto;
+        font-size: 16px; /* Further scaling for very small screens */
     }
 
     .icon-box {
         width: 40px;
         height: 40px;
-        font-size: 0.6rem; /* Compact text for small icons */
     }
-    
+
     .icon-box img {
         width: 15px;
         height: 15px;
