@@ -3,7 +3,7 @@ body {
     margin: 0;
     font-family: 'Courier New', monospace;
     background: url('/photo_2024-12-31_02-03-28.jpg') no-repeat center center fixed;
-    background-size: cover; /* Ensures the image covers the entire background */
+    background-size: cover;
     color: black;
     display: flex;
     flex-direction: column;
@@ -12,28 +12,40 @@ body {
 }
 
 
+
+/* Pixelated Header */
 .pixelated-header {
-    width: fit-content;
-    margin-right: 140px; /* Adjust this value to control the left shift */
+    margin-top: 20px; /* Space above header */
+    margin-bottom: 10px; /* Space between ASCII art and the rest */
     text-align: center;
-    color: transparent;
+    margin-left: -150px;
     background: linear-gradient(90deg, #ff69b4, #da5bd6, #7f1bdd);
-    -webkit-background-clip: text; /* Clips the background gradient to the text */
-    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-shadow: 
-        0 0 5px rgba(255, 105, 180, 0.7), /* Pinkish glow */
-        0 0 10px rgba(131, 24, 231, 0.5), /* Purple glow */
-        0 0 15px rgba(0, 0, 0, 0.4); /* Slight depth shadow */
+        0 0 5px rgba(255, 105, 180, 0.7),
+        0 0 10px rgba(131, 24, 231, 0.5),
+        0 0 15px rgba(0, 0, 0, 0.4);
 }
 
 .ascii-art {
-    font-family: 'Courier New', Courier, monospace; /* Monospace font ensures alignment */
-    font-size: 25px; /* Adjust the font size for better visibility */
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 19px;
     line-height: 1.2;
-    white-space: pre; /* Keeps the ASCII art formatting intact */
-    letter-spacing: 2px; /* Adds spacing for a retro style */
+    white-space: pre;
+    letter-spacing: 2px;
+    text-align: center;
 }
 
+@media (max-width: 768px) {
+    .ascii-art {
+        font-size: 16px; /* Reduce font size for smaller screens */
+        letter-spacing: 1px;
+    }
+    .pixelated-header {
+        margin-right: 0;
+    }
+}
 
 /*
 .pixelated-header {
@@ -52,42 +64,111 @@ body {
 }
 */
 
+/* Container for Terminals */
 .container {
     display: flex;
-    gap: 20px;
+    gap: 20px; /* Reduce spacing between terminals */
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    margin-top: -40px; /* Space between header and terminals */
 }
 
-/* Terminals */
+/* Terminal Styling */
 .terminal {
-    width: 300px;
-    height: 500px;
-    background: black;
+    width: 320px;
+    height: 450px;
+    background: #1e1e1e;
     border-radius: 10px;
-    border: 2px solid;
+    border: 2px solid #333;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    box-shadow: 0 0 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    padding: 10px; /* Adjust padding for better content alignment */
+    text-align: left;
     overflow: hidden;
 }
-
+@media (max-width: 768px) {
+    .terminal {
+        width: 90%; /* Make terminals responsive */
+        height: 400px; /* Reduce height */
+    }
+}
+/* Terminal Header */
 .header {
     padding: 10px;
-    background: black;
+    background: #2e2e2e;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
+    color: #fff;
     text-transform: uppercase;
     letter-spacing: 2px;
+    border-bottom: 1px solid #444;
 }
 
+/* Chat Content Area */
 .content {
     flex: 1;
     padding: 15px;
     overflow-y: auto;
     font-size: 14px;
     line-height: 1.5;
+    color: #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+/* Input Box */
+.input-box {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #2e2e2e;
+    border-top: 1px solid #444;
+}
+
+.input-box input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: #333;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.input-box button {
+    padding: 10px 15px;
+    margin-left: 10px;
+    background: #ff69b4;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.input-box button:hover {
+    background: #e458a6;
+}
+
+/* Chat Message Bubbles */
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+}
+
+.message.user {
+    background: #00bfff;
+    color: white;
+    align-self: flex-end;
+}
+
+.message.bot {
+    background: #444;
+    color: white;
+    align-self: flex-start;
 }
 
 .theme-pink {
@@ -123,35 +204,15 @@ body {
 }
 */
 
-/* Center Object 
-.center-object {
-    width: 150px;
-    height: 150px;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-}
-
-.object {
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(45deg, #ff69b4, #00bfff);
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-}
-*/
-
-/* Floating Icons Styling */
+/* Floating Icons */
 .icon-container {
     display: flex;
     justify-content: center;
     gap: 20px;
     position: absolute;
-    bottom: 50px;
+    bottom: 100px;
     z-index: 10;
+    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
 }
 
 .icon-box {
@@ -163,13 +224,14 @@ body {
     background: rgba(0, 0, 0, 0.8);
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 10px;
-    position: relative;
     font-family: 'Courier New', monospace;
     font-size: 12px;
     text-align: center;
     color: white;
     text-transform: uppercase;
 }
+
+
 
 /* Rocket and Chart - Pink Glow */
 .icon-box.pink {
@@ -190,17 +252,16 @@ body {
 }
 
 .icon-box img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
 }
 
 .copy-box {
-    padding: 5px 10px;
-    flex-direction: column;
+    width: 160px;
 }
 
 .copy-box span {
-    margin-top: 5px;
+    margin-top: -5px;
 }
 
 .nft-box {
@@ -208,94 +269,109 @@ body {
     font-weight: bold;
 }
 
-/* Base Styling for Mobile Responsiveness */
+/* Responsive Adjustments */
+/* Updated Mobile-Responsive Adjustments */
+
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
-        align-items: flex-start;
-        overflow-x: hidden;
-    }
-
-    .pixelated-header {
-        margin-right: 0; /* Center header for smaller screens */
-        text-align: center;
-        width: 100%;
-        font-size: 16px; /* Reduce font size */
-    }
-
+    /* ASCII Art Adjustments */
     .ascii-art {
-        font-size: 20px; /* Scale down ASCII art */
+        font-size: 16px;
         letter-spacing: 1px;
     }
+    .pixelated-header {
+        margin: 10px 0; /* Reduce margin for smaller screens */
+        text-align: center;
+    }
 
+    /* Container and Terminals */
     .container {
-        flex-direction: column;
-        gap: 15px;
-        align-items: center;
+        flex-direction: row; /* Keep terminals side-by-side */
+        gap: 10px;
         justify-content: center;
     }
 
     .terminal {
-        width: 90%; /* Full width for mobile screens */
-        height: auto; /* Allow height to adjust based on content */
-        margin-bottom: 20px;
+        width: 40%; /* Reduce size of terminals */
+        height: auto; /* Adjust to content height */
+        min-height: 300px;
     }
 
-    .header {
-        font-size: 14px;
-        padding: 8px;
+    /* Input Box Adjustments */
+    .input-box input {
+        font-size: 12px; /* Smaller font size */
+        padding: 8px; /* Adjust padding */
     }
 
-    .content {
+    .input-box button {
         font-size: 12px;
-        padding: 10px;
+        padding: 8px 12px;
     }
 
-    .center-object {
-        width: 100px;
-        height: 100px; /* Scale down for mobile */
-    }
-
+    /* Floating Icons */
     .icon-container {
-        gap: 10px; /* Reduce spacing between icons */
-        bottom: 20px; /* Adjust position for smaller screens */
-        flex-wrap: wrap; /* Wrap icons if necessary */
+        gap: 10px;
+        padding: 10px;
     }
 
     .icon-box {
         width: 50px;
         height: 50px;
-        font-size: 10px;
-        border-radius: 8px;
+        font-size: 10px; /* Smaller text */
     }
 
     .icon-box img {
-        width: 20px;
-        height: 20px; /* Adjust icon size */
+        width: 30px;
+        height: 30px;
     }
 
-    .copy-box span {
-        font-size: 10px; /* Smaller text for mobile */
+    .copy-box {
+        width: auto; /* Adjust for smaller screens */
+        font-size: 10px;
     }
 
-    .nft-box {
-        font-size: 12px; /* Reduce font size */
+    /* Center Object Adjustments */
+    .center-object {
+        width: 100px;
+        height: 100px;
+    }
+
+    .object {
+        width: 80px;
+        height: 80px;
     }
 }
 
 @media (max-width: 480px) {
+    /* Further Adjustments for Ultra-Small Screens */
     .ascii-art {
-        font-size: 16px; /* Further scaling for very small screens */
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
+
+    .terminal {
+        width: 45%; /* Keep proportional size on ultra-small screens */
+        min-height: 250px;
+    }
+
+    .input-box input {
+        font-size: 10px;
+        padding: 6px;
+    }
+
+    .input-box button {
+        font-size: 10px;
+        padding: 6px 10px;
     }
 
     .icon-box {
         width: 40px;
         height: 40px;
+        font-size: 8px;
     }
 
     .icon-box img {
-        width: 15px;
-        height: 15px;
+        width: 20px;
+        height: 20px;
     }
 
     .center-object {
@@ -303,7 +379,8 @@ body {
         height: 80px;
     }
 
-    .content {
-        font-size: 10px; /* Compact font for very small screens */
+    .object {
+        width: 60px;
+        height: 60px;
     }
 }
