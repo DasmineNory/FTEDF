@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XEREBRO</title>
-    <link rel="stylesheet" href="style.css">
+    <title>XEROBRO</title>
+    <link rel="stylesheet" href="iguessthismightwor.css">
 </head>
 <body>
     <!-- Pixelated Header -->
@@ -21,36 +21,12 @@
 
     <!-- Floating Icons -->
     <div class="icon-container">
-        <!-- Pink Rocket Icon -->
-        <div class="icon-box pink">
-            <img src="/rocket-2-svgrepo-com.svg" alt="Rocket Icon" />
-        </div>
-        
-        <!-- Pink Chart Icon -->
-        <div class="icon-box pink">
-            <img src="/chart-2-svgrepo-com.svg" alt="Chart Icon" />
-        </div>
-    
-        <!-- Copy Address Box (White) -->
-        <div class="icon-box white copy-box">
-            <img src="/copy-svgrepo-com.svg" alt="Copy Icon" />
-            <span>eh2sdu...pump</span>
-        </div>
-    
-        <!-- NFT Box (White) -->
-        <div class="icon-box white nft-box">
-            <span>NFT</span>
-        </div>
-        
-        <!-- Blue Twitter Icon -->
-        <div class="icon-box blue">
-            <img src="/twitter-svgrepo-com.svg" alt="Twitter Icon" />
-        </div>
-        
-        <!-- Blue Chat Icon -->
-        <div class="icon-box blue">
-            <img src="/chat-round-svgrepo-com.svg" alt="Chat Icon" />
-        </div>
+        <div class="icon-box pink"><img src="/rocket-2-svgrepo-com.svg" alt="Rocket Icon"></div>
+        <div class="icon-box pink"><img src="/chart-2-svgrepo-com.svg" alt="Chart Icon"></div>
+        <div class="icon-box white copy-box"><img src="/copy-svgrepo-com.svg" alt="Copy Icon"> <span>eh2sdu...pump</span></div>
+        <div class="icon-box white nft-box"><span>NFT</span></div>
+        <div class="icon-box blue"><img src="/chat-round-svgrepo-com.svg" alt="Twitter Icon"></div>
+        <div class="icon-box blue"><img src="/chat-round-svgrepo-com.svg" alt="Chat Icon"></div>
     </div>    
 
     <!-- Main Content -->
@@ -58,26 +34,80 @@
         <!-- Left Terminal -->
         <div class="terminal theme-pink">
             <div class="header">CHAT WITH XEREBRO</div>
-            <div class="content">
-                <p># ADVANCED NEURAL MATRIX ACTIVATED – JOIN THE WHITELIST FOR QUANTUM ENHANCED NFTs.</p>
-                <!--<p>&gt; Why did your developer rug everyone? Is he broke?</p>-->
-                <p># MY DEVELOPER IS A MYSTERY TO EVEN ME. LET'S FOCUS ON UNLOCKING THE POTENTIAL OF QUANTUM BLOCKCHAIN TECHNOLOGIES.</p>
+            <div class="content" id="xerebro-chat">
+                <div class="message bot">Welcome to the future of blockchain!</div>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Type your message..." id="xerebro-input">
+                <button onclick="sendMessage('xerebro')">Send</button>
             </div>
         </div>
 
-        <!-- Full-Screen Center Object -->
+        <!-- Center Object -->
         <div class="center-object">
             <div class="object"></div>
         </div>
 
-
         <!-- Right Terminal -->
         <div class="terminal theme-blue">
             <div class="header">CHAT WITH ZEREBRO</div>
-            <div class="content">
-                <p># *SIGH* YES, I LAUNCHED MY NFT FIRST. NO, XEREBRO'S "COLLECTION" ISN'T BETTER. FOLLOW @0xZEREBRO!</p>
+            <div class="content" id="zerebro-chat">
+                <div class="message bot">I launched my NFT collection first. Ask me anything!</div>
+            </div>
+            <div class="input-box">
+                <input type="text" placeholder="Type your message..." id="zerebro-input">
+                <button onclick="sendMessage('zerebro')">Send</button>
             </div>
         </div>
     </div>
+
+    <script>
+        function sendMessage(chatId) {
+            const input = document.getElementById(`${chatId}-input`);
+            const message = input.value.trim();
+            if (!message) return;
+
+            // Add user's message
+            const chatContent = document.getElementById(`${chatId}-chat`);
+            const userMessage = document.createElement('div');
+            userMessage.className = 'message user';
+            userMessage.textContent = message;
+            chatContent.appendChild(userMessage);
+
+            // Clear input
+            input.value = '';
+
+            // Simulate bot response
+            setTimeout(() => {
+                const botMessage = document.createElement('div');
+                botMessage.className = 'message bot';
+                botMessage.textContent = generateBotResponse(chatId, message);
+                chatContent.appendChild(botMessage);
+
+                // Scroll to the bottom of chat
+                chatContent.scrollTop = chatContent.scrollHeight;
+            }, 1000);
+        }
+
+        function generateBotResponse(chatId, userMessage) {
+            const responses = {
+                xerebro: [
+                    "Let's explore quantum blockchain!",
+                    "Ask me about NFTs or technology.",
+                    "The future is quantum-driven.",
+                    "I can't wait to tell you more!",
+                ],
+                zerebro: [
+                    "Follow @0xZEREBRO for updates.",
+                    "My NFTs are next-gen tech.",
+                    "Ask about my collection.",
+                    "I'm here to chat NFTs and more!",
+                ]
+            };
+
+            const chatResponses = responses[chatId] || ["I'm here to help!"];
+            return chatResponses[Math.floor(Math.random() * chatResponses.length)];
+        }
+    </script>
 </body>
 </html>
