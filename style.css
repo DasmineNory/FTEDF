@@ -4,7 +4,7 @@ body {
     font-family: 'Courier New', monospace;
     background: url('/photo_2024-12-31_02-03-28.jpg') no-repeat center center fixed;
     background-size: cover; /* Ensures the image covers the entire background */
-    color: white;
+    color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
