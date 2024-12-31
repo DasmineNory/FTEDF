@@ -1,0 +1,209 @@
+/* Base Styling */
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background: url('/photo_2024-12-31_02-03-28.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the entire background */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+
+.pixelated-header {
+    width: fit-content;
+    margin-right: 140px; /* Adjust this value to control the left shift */
+    text-align: center;
+    color: transparent;
+    background: linear-gradient(90deg, #ff69b4, #da5bd6, #7f1bdd);
+    -webkit-background-clip: text; /* Clips the background gradient to the text */
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient */
+    text-shadow: 
+        0 0 5px rgba(255, 105, 180, 0.7), /* Pinkish glow */
+        0 0 10px rgba(131, 24, 231, 0.5), /* Purple glow */
+        0 0 15px rgba(0, 0, 0, 0.4); /* Slight depth shadow */
+}
+
+.ascii-art {
+    font-family: 'Courier New', Courier, monospace; /* Monospace font ensures alignment */
+    font-size: 25px; /* Adjust the font size for better visibility */
+    line-height: 1.2;
+    white-space: pre; /* Keeps the ASCII art formatting intact */
+    letter-spacing: 2px; /* Adds spacing for a retro style */
+}
+
+
+/*
+.pixelated-header {
+    width: fit-content;
+    margin-right: 140px; /* Adjust this value to control the left shift 
+    text-align: center;
+    color: #ff69b4;
+    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
+}
+
+.ascii-art {
+    font-family: 'Courier New', Courier, monospace; /* Monospace font ensures alignment 
+    font-size: 30px; /* Adjust the font size for better visibility 
+    line-height: 1.2;
+    white-space: pre; /* Keeps the ASCII art formatting intact 
+}
+*/
+
+.container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Terminals */
+.terminal {
+    width: 300px;
+    height: 500px;
+    background: black;
+    border-radius: 10px;
+    border: 2px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    box-shadow: 0 0 20px;
+    overflow: hidden;
+}
+
+.header {
+    padding: 10px;
+    background: black;
+    text-align: center;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.theme-pink {
+    border-color: #ff69b4;
+    box-shadow: 0 0 10px #ff69b4;
+    color: #ff69b4;
+}
+
+.theme-blue {
+    border-color: #00bfff;
+    box-shadow: 0 0 10px #00bfff;
+    color: #00bfff;
+}
+
+/* Center Object */
+.center-object {
+    width: 150px;
+    height: 150px;
+    /*background: black;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border-radius: 50%;*/
+    /*box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);*/
+}
+/*
+.object {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #ff69b4, #00bfff);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+*/
+
+/* Center Object 
+.center-object {
+    width: 150px;
+    height: 150px;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.object {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #ff69b4, #00bfff);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+*/
+
+/* Floating Icons Styling */
+.icon-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    bottom: 50px;
+    z-index: 10;
+}
+
+.icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70px;
+    height: 70px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    position: relative;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Rocket and Chart - Pink Glow */
+.icon-box.pink {
+    box-shadow: 0 0 15px #ff69b4, 0 0 30px #ff69b4;
+    border-color: #ff69b4;
+}
+
+/* Twitter and Chat - Blue Glow */
+.icon-box.blue {
+    box-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff;
+    border-color: #00bfff;
+}
+
+/* Copy and NFT - White Glow */
+.icon-box.white {
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.icon-box img {
+    width: 30px;
+    height: 30px;
+}
+
+.copy-box {
+    padding: 5px 10px;
+    flex-direction: column;
+}
+
+.copy-box span {
+    margin-top: 5px;
+}
+
+.nft-box {
+    font-size: 14px;
+    font-weight: bold;
+}
