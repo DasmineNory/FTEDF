@@ -1,3 +1,16 @@
+/* Base Styling 
+body {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    background: url('/photo_2024-12-31_02-03-28.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the entire background 
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}*/
+
 /* Base Styling */
 body {
     margin: 0;
@@ -10,7 +23,6 @@ body {
     align-items: center;
     overflow: hidden;
 }
-
 
 .pixelated-header {
     width: fit-content;
@@ -25,6 +37,22 @@ body {
         0 0 10px rgba(131, 24, 231, 0.5), /* Purple glow */
         0 0 15px rgba(0, 0, 0, 0.4); /* Slight depth shadow */
 }
+
+/*
+.pixelated-header {
+    width: fit-content;
+    margin-right: 140px; /* Adjust this value to control the left shift 
+    text-align: center;
+    color: transparent;
+    background: linear-gradient(90deg, #ff69b4, #da5bd6, #7f1bdd);
+    -webkit-background-clip: text; /* Clips the background gradient to the text 
+    -webkit-text-fill-color: transparent; /* Makes the text transparent to show the gradient 
+    text-shadow: 
+        0 0 5px rgba(255, 105, 180, 0.7), /* Pinkish glow 
+        0 0 10px rgba(131, 24, 231, 0.5), /* Purple glow 
+        0 0 15px rgba(0, 0, 0, 0.4); /* Slight depth shadow 
+        
+}*/
 
 .ascii-art {
     font-family: 'Courier New', Courier, monospace; /* Monospace font ensures alignment */
@@ -212,7 +240,7 @@ body {
 @media (max-width: 768px) {
     body {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         overflow-x: hidden;
     }
 
@@ -220,7 +248,7 @@ body {
         margin-right: 0; /* Center header for smaller screens */
         text-align: center;
         width: 100%;
-        font-size: 16px; /* Reduce font size */
+        font-size: 18px; /* Slightly reduce font size */
     }
 
     .ascii-art {
