@@ -300,7 +300,7 @@ body {
     /* Move Icons Below the Terminal */
     .icon-container {
         position: relative; /* Makes positioning dependent on the document flow */
-        bottom: -400px; /* Adjust the position if necessary */
+        bottom: -800px; /* Adjust the position if necessary */
         margin-top: 20px; /* Add spacing above the icons */
         flex-wrap: wrap;
         gap: 10px;
