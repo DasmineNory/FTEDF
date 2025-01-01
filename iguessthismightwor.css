@@ -186,6 +186,7 @@ body {
     flex-wrap: wrap;
 }
 
+
 .icon-box {
     display: flex;
     justify-content: center;
@@ -240,10 +241,14 @@ body {
 
 /* Mobile & Tablet Adjustments */
 @media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        padding: 10px;
+    }
+
     .ascii-art {
-        font-size: 14px; /* Reduced font size for better scaling */
+        font-size: 16px;
         letter-spacing: 1px;
-        text-align: center;
     }
 
     .pixelated-header {
@@ -255,18 +260,17 @@ body {
     /* Containers */
     .container {
         flex-direction: column;
-        gap: 10px;
+        gap: 20px;
         justify-content: center;
         align-items: center;
-        margin-top: -20px;
+        margin-top: -30px;
     }
 
     /* Terminal Styling */
     .terminal {
-        width: 90%; 
+        width: 100%; 
         height: auto; 
         min-height: 300px;
-        margin-bottom: 15px;
     }
 
     .terminal .header {
@@ -293,19 +297,18 @@ body {
         display: none;
     }
 
-    /* Footer Icons */
+    /* Move Icons Below the Terminal */
     .icon-container {
+        position: relative; /* Makes positioning dependent on the document flow */
+        bottom: -400px; /* Adjust the position if necessary */
+        margin-top: 20px; /* Add spacing above the icons */
         flex-wrap: wrap;
-        justify-content: center;
         gap: 10px;
-        padding: 10px;
-        position: relative; /* Reset positioning */
-        bottom: 0;
-        margin-top: 20px;
+        justify-content: center;
     }
 
     .icon-box {
-        width: 50px;
+        width: 50px; /* Smaller size for mobile */
         height: 50px;
         font-size: 10px;
     }
