@@ -11,12 +11,10 @@ body {
     overflow: hidden;
 }
 
-
-
 /* Pixelated Header */
 .pixelated-header {
-    margin-top: 20px; /* Space above header */
-    margin-bottom: 10px; /* Space between ASCII art and the rest */
+    margin-top: 20px; 
+    margin-bottom: 10px;
     text-align: center;
     margin-left: -150px;
     background: linear-gradient(90deg, #ff69b4, #da5bd6, #7f1bdd);
@@ -39,7 +37,7 @@ body {
 
 @media (max-width: 768px) {
     .ascii-art {
-        font-size: 16px; /* Reduce font size for smaller screens */
+        font-size: 16px;
         letter-spacing: 1px;
     }
     .pixelated-header {
@@ -47,30 +45,13 @@ body {
     }
 }
 
-/*
-.pixelated-header {
-    width: fit-content;
-    margin-right: 140px; /* Adjust this value to control the left shift 
-    text-align: center;
-    color: #ff69b4;
-    text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
-}
-
-.ascii-art {
-    font-family: 'Courier New', Courier, monospace; /* Monospace font ensures alignment 
-    font-size: 30px; /* Adjust the font size for better visibility 
-    line-height: 1.2;
-    white-space: pre; /* Keeps the ASCII art formatting intact 
-}
-*/
-
 /* Container for Terminals */
 .container {
     display: flex;
-    gap: 20px; /* Reduce spacing between terminals */
+    gap: 20px; 
     justify-content: center;
     align-items: flex-start;
-    margin-top: -40px; /* Space between header and terminals */
+    margin-top: -40px; 
 }
 
 /* Terminal Styling */
@@ -84,14 +65,14 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    padding: 10px; /* Adjust padding for better content alignment */
+    padding: 10px;
     text-align: left;
     overflow: hidden;
 }
 @media (max-width: 768px) {
     .terminal {
-        width: 90%; /* Make terminals responsive */
-        height: 400px; /* Reduce height */
+        width: 90%; 
+        height: 400px; 
     }
 }
 /* Terminal Header */
@@ -118,6 +99,7 @@ body {
     flex-direction: column;
     gap: 10px;
 }
+
 /* Input Box */
 .input-box {
     display: flex;
@@ -152,7 +134,7 @@ body {
     background: #e458a6;
 }
 
-/* Chat Message Bubbles */
+/* Chat Message */
 .message {
     padding: 10px;
     border-radius: 10px;
@@ -187,22 +169,11 @@ body {
 .center-object {
     width: 150px;
     height: 150px;
-    /*background: black;*/
     display: flex;
     justify-content: center;
     align-items: center;
-    /*border-radius: 50%;*/
-    /*box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);*/
+
 }
-/*
-.object {
-    width: 100px;
-    height: 100px;
-    background: linear-gradient(45deg, #ff69b4, #00bfff);
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-}
-*/
 
 /* Floating Icons */
 .icon-container {
@@ -212,7 +183,7 @@ body {
     position: absolute;
     bottom: 100px;
     z-index: 10;
-    flex-wrap: wrap; /* Ensure wrapping on smaller screens */
+    flex-wrap: wrap;
 }
 
 .icon-box {
@@ -231,21 +202,19 @@ body {
     text-transform: uppercase;
 }
 
-
-
-/* Rocket and Chart - Pink Glow */
+/* Pink Glow */
 .icon-box.pink {
     box-shadow: 0 0 15px #ff69b4, 0 0 30px #ff69b4;
     border-color: #ff69b4;
 }
 
-/* Twitter and Chat - Blue Glow */
+/* Blue Glow */
 .icon-box.blue {
     box-shadow: 0 0 15px #00bfff, 0 0 30px #00bfff;
     border-color: #00bfff;
 }
 
-/* Copy and NFT - White Glow */
+/* White Glow */
 .icon-box.white {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8);
     border-color: rgba(255, 255, 255, 0.8);
@@ -269,37 +238,49 @@ body {
     font-weight: bold;
 }
 
-/* Responsive Adjustments */
-/* Updated Mobile-Responsive Adjustments */
-
+/* Mobile & Tablet Adjustments */
 @media (max-width: 768px) {
-    /* ASCII Art Adjustments */
     .ascii-art {
-        font-size: 16px;
+        font-size: 14px; /* Reduced font size for better scaling */
         letter-spacing: 1px;
-    }
-    .pixelated-header {
-        margin: 10px 0; /* Reduce margin for smaller screens */
         text-align: center;
     }
 
-    /* Container and Terminals */
+    .pixelated-header {
+        margin-right: 0;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    /* Containers */
     .container {
-        flex-direction: row; /* Keep terminals side-by-side */
+        flex-direction: column;
         gap: 10px;
         justify-content: center;
+        align-items: center;
+        margin-top: -20px;
     }
 
+    /* Terminal Styling */
     .terminal {
-        width: 40%; /* Reduce size of terminals */
-        height: auto; /* Adjust to content height */
+        width: 90%; 
+        height: auto; 
         min-height: 300px;
+        margin-bottom: 15px;
     }
 
-    /* Input Box Adjustments */
+    .terminal .header {
+        font-size: 14px;
+    }
+
+    .content {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+
     .input-box input {
-        font-size: 12px; /* Smaller font size */
-        padding: 8px; /* Adjust padding */
+        font-size: 12px; 
+        padding: 8px; 
     }
 
     .input-box button {
@@ -307,16 +288,26 @@ body {
         padding: 8px 12px;
     }
 
-    /* Floating Icons */
+    /* Center Object (Hidden for Mobile) */
+    .center-object {
+        display: none;
+    }
+
+    /* Footer Icons */
     .icon-container {
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 10px;
         padding: 10px;
+        position: relative; /* Reset positioning */
+        bottom: 0;
+        margin-top: 20px;
     }
 
     .icon-box {
         width: 50px;
         height: 50px;
-        font-size: 10px; /* Smaller text */
+        font-size: 10px;
     }
 
     .icon-box img {
@@ -325,62 +316,67 @@ body {
     }
 
     .copy-box {
-        width: auto; /* Adjust for smaller screens */
+        width: auto; 
         font-size: 10px;
     }
 
-    /* Center Object Adjustments */
-    .center-object {
-        width: 100px;
-        height: 100px;
+    .nft-box {
+        font-size: 10px;
     }
 
-    .object {
-        width: 80px;
-        height: 80px;
+    /* Adjusting layout for smaller screens */
+    @media (max-width: 480px) {
+        .ascii-art {
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .terminal {
+            width: 100%;
+            min-height: 250px;
+        }
+
+        .input-box input {
+            font-size: 10px;
+            padding: 6px;
+        }
+
+        .input-box button {
+            font-size: 10px;
+            padding: 6px 10px;
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            font-size: 8px;
+        }
+
+        .icon-box img {
+            width: 20px;
+            height: 20px;
+        }
     }
 }
 
-@media (max-width: 480px) {
-    /* Further Adjustments for Ultra-Small Screens */
-    .ascii-art {
-        font-size: 14px;
-        letter-spacing: 0.5px;
+/* Desktop Styling (Unchanged) */
+@media (min-width: 769px) {
+    .container {
+        flex-direction: row;
+        gap: 20px;
     }
 
     .terminal {
-        width: 45%; /* Keep proportional size on ultra-small screens */
-        min-height: 250px;
-    }
-
-    .input-box input {
-        font-size: 10px;
-        padding: 6px;
-    }
-
-    .input-box button {
-        font-size: 10px;
-        padding: 6px 10px;
-    }
-
-    .icon-box {
-        width: 40px;
-        height: 40px;
-        font-size: 8px;
-    }
-
-    .icon-box img {
-        width: 20px;
-        height: 20px;
+        width: 320px;
+        height: 450px;
     }
 
     .center-object {
-        width: 80px;
-        height: 80px;
+        display: flex;
     }
 
-    .object {
-        width: 60px;
-        height: 60px;
+    .icon-container {
+        position: absolute;
+        bottom: 100px;
     }
 }
