@@ -271,7 +271,7 @@ body {
         width: 100%; 
         height: auto; 
         min-height: 300px;
-        margin-bottom: 50px; /* Ensure space for the icon-container below */
+        margin-bottom: 15px; /* Ensure space for the icon-container below */
     }
 
     .terminal .header {
