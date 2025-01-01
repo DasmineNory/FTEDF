@@ -271,6 +271,7 @@ body {
         width: 100%; 
         height: auto; 
         min-height: 300px;
+        margin-bottom: 50px; /* Ensure space for the icon-container below */
     }
 
     .terminal .header {
@@ -300,7 +301,7 @@ body {
     /* Move Icons Below the Terminal */
     .icon-container {
         position: relative; /* Makes positioning dependent on the document flow */
-        bottom: -800px; /* Adjust the position if necessary */
+        bottom: -740px; /* Adjust the position if necessary */
         margin-top: 20px; /* Add spacing above the icons */
         flex-wrap: wrap;
         gap: 10px;
